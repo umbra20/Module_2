@@ -1,5 +1,6 @@
 package Module_2.Map;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
@@ -12,9 +13,8 @@ import java.util.stream.Collectors;
 public class HashMetod {
     public static void main(String[] args) {
         System.out.println("Вывод элеметов строки длинной более 3.");
-        System.out.println()
-        ;
-        TreeMap<Integer, String> intToStringMap = new TreeMap<>();
+        System.out.println();
+        HashMap<Integer, String> intToStringMap = new HashMap<>();
         intToStringMap.put(1, "Red");
         intToStringMap.put(2, "Green");
         intToStringMap.put(3, "Black");
