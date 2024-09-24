@@ -3,26 +3,41 @@ package Module_2.Generics;
 // содержат ли они одинаковые элементы в одном и том же порядке.
 
 import java.util.Arrays;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static java.util.Arrays.compare;
 
 public class TwoArray {
 
     public static void main(String[] args) {
-        int[] array1 = new int[]{1, 2, 2, 8, 6};
-        int[] array2 = new int[]{6, 8, 2, 2, 1};
+        Integer[] array1 = {1, 2, 2, 8, 6};
+        Integer[] array2 = {1, 2, 2, 8, 6};
+        System.out.println("Проверка двух массива, на совпадение.");
+        System.out.println(compare(array1, array2));
 
-        System.out.println("Проверка двух массивов на одинаковые элементы в одном и том же порядке.");
+    }
+
+    private static <T> boolean compare(T[] a, T[] b) {
+
+        if (a.length != b.length)
+            return false;
+
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] != b[i])
+                return false;
+        }
+        System.out.println("Два массива, одинаковы");
+        return true;
+    }
+}
+
+/*
+        System.out.println("Проверка двух массивов на одинаковые " +
+                "элементы в одном и том же порядке.");
         System.out.println(Arrays.toString(array1));
         System.out.println(Arrays.toString(array2));
         System.out.println();
-
-//        boolean arrayEquality = Arrays.equals(array1, array2); // проверка массива на совпадение
-//
-//        if (arrayEquality) {
-//            System.out.println("Оба массива одинаковы");
-//        } else {
-//            System.out.println("Нет совпадений");
-//
-//        }
 
         boolean unorderedEquality = arrayEqualUnordered(array1, array2);
         if (unorderedEquality) {
@@ -33,9 +48,8 @@ public class TwoArray {
 
     }
 
-    public static boolean arrayEqualUnordered(int[] arra1, int[] arra2)
-    {
-        if (arra1.length != arra2.length){
+    public static boolean arrayEqualUnordered(int[] arra1, int[] arra2) {
+        if (arra1.length != arra2.length) {
             return false;
         }
         Arrays.sort(arra1);
@@ -44,3 +58,4 @@ public class TwoArray {
     }
 }
 
+*/

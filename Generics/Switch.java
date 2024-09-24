@@ -7,7 +7,8 @@ import java.util.List;
 // двух различных элементов в массиве.
 
 public class Switch {
-    private static final String EXCEPTION_INVALID_SWITCH_INDEX = "Ошибка!!! Не правльный индекс для обмена: ";
+    private static final String EXCEPTION_INVALID_SWITCH_INDEX = "Ошибка!!! Не правльный " +
+            "индекс для обмена: ";
 
     public static void main(String[] args) {
         System.out.println("Метод обмена позиций двух элементов в массиве");
@@ -16,7 +17,8 @@ public class Switch {
         System.out.println(oneArray);
     }
 
-    static <T> void switchElements(int oneSwitchIndex, int twoSwitchIndex, ArrayList<T> list) throws IllegalArgumentException {
+    static <T> void switchElements(int oneSwitchIndex, int twoSwitchIndex,
+                                   ArrayList<T> list) throws IllegalArgumentException {
         if (oneSwitchIndex >= list.size() || oneSwitchIndex < 0) {
             throw new IllegalArgumentException(EXCEPTION_INVALID_SWITCH_INDEX + oneSwitchIndex);
         }
