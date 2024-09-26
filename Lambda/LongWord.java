@@ -6,9 +6,12 @@ import java.util.Comparator;
 public class LongWord {
     public static void main(String[] args) {
         String s = "Сегодня замечательная погода в моей жизни";
-        String longets = Arrays.stream(s.split(" ")).
+        if (s.equals("")) {
+            System.out.println("Строка пустая");
+        }else {
+        String longest = Arrays.stream(s.split(" ")).
                 max(Comparator.comparingInt(String::length)).orElse(null);
-        System.out.println(longets);
+        System.out.println(longest);}
     }
 
 }

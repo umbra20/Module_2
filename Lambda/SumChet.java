@@ -9,23 +9,12 @@ public class SumChet {
     public static void main(String[] args) {
 
         int[] array = {5, 6, 8, 10, 22, 11, 12, 66};
-        Sum sum = (x) -> x % 2 ==0;
         System.out.println("Сумма всех четных чисел: " + "\n" + Arrays.toString(array));
         System.out.println();
-        System.out.println("Итого: " + sumOfEven(array, sum));
+        System.out.println("Итого: " + sumOfEven(array));
     }
 
-    public static int sumOfEven(int[] array, Sum exp) {
-        int result = 0;
-        for (int element : array) {
-            if (exp.isSum(element)) {
-                result += element;
-            }
-        }
-        return result;
+    public static int sumOfEven(int[] array) {
+        return Arrays.stream(array).filter(x -> x % 2 == 0).sum();
     }
-}
-
-interface Sum {
-    boolean isSum(int a);
 }
