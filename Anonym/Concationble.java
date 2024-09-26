@@ -1,6 +1,6 @@
-package Module_2.Anonym;
-@FunctionalInterface
-public interface Concationble {
-    void ConCat();
+// package Module_2.Anonym;
+// @FunctionalInterface
+// public interface Concationble {
+//     void ConCat();
 
-}
+// }
