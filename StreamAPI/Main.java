@@ -2,6 +2,7 @@ package Module_2.StreamAPI;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 //TODO  Создать класс Person с полями name и age. В классе с методом
 // main создать список, состоящий не менее, чем из 10 объектов класса
 // Person с произвольными данными. Отфильтровать
@@ -9,8 +10,11 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        int a = 30;
-        System.out.println("Список имен, тем кому за " + a + " лет");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите возраст для поиска: ");
+        int number = scanner.nextInt();
+
+        System.out.println("Список имен, тем кому за " + number + " лет");
         System.out.println();
         List<Person> list = new ArrayList<>();
         list.add(new Person("Елена", 22));
@@ -25,7 +29,7 @@ public class Main {
         list.add(new Person("Анатолий", 29));
 
         List<Person> filteredPeople = list.stream()
-                .filter(person -> person.getAge() > a).toList();
+                .filter(person -> person.getAge() > number).toList();
 
         filteredPeople.forEach(person -> System.out.println(person.getName() + ", " +  person.getAge() + " лет"));
 
